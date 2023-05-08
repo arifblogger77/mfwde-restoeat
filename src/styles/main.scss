@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+$text-primary: #000000;
+$text-secondary: #ffffff;
+
+$background-yellow: #f6c90e;
+
+$logo-color-primary: #ffd62d;
+$logo-color-secondary: #d62805;
+
+$logo-gray-primary: #cccccc;
+$logo-gray-secondary: #696969;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+/*
+ * Header
+ *
+ */
+
+.header {
+  min-height: 60px;
+  transition: min-height 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.header__inner {
+  width: 260px;
+  margin-right: auto;
+}
+
+.header__title {
+  font-weight: 300;
+  font-size: 4em;
+  margin: 0.25em 0;
+  display: inline-block;
+}
+
+/*
+* Drawer
+*
+*/
+
+#drawer {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+
+  /* menyembunyikan drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+  transform: translate(-250px, 0);
+  transition: transform 0.3s ease-in-out;
+  background: white;
+  top: 0;
+  z-index: 1;
+}
+
+#drawer.open {
+  transform: translate(0, 0);
+}
+
+#drawer li {
+  border-bottom: 1px black solid;
+}
+
+#drawer a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+#hamburger {
+  font-size: 32px;
+  font-weight: bold;
+  min-width: 44px;
+  min-height: 44px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/*
+ * Top level navigation
+ */
+
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.nav__item {
+  box-sizing: border-box;
+  display: block;
+  width: auto;
+  text-align: center;
+  line-height: 24px;
+  padding: 24px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  color: $text-primary;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/*
+ * Jumbotron
+ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-color: green;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: $logo-color-secondary;
+  opacity: 0.8;
+  padding: 0.5rem;
+}
+
+.hero__title {
+  color: $text-secondary;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.hero__tagline {
+  color: $text-secondary;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/*
+ * footer
+ */
+
+footer {
+  background-color: #2c3e50;
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+footer ul {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 1em;
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* button */
+button {
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media screen and (min-width: 650px) {
+  .headline__title {
+    font-size: 18px;
+  }
+
+  .post-item__content {
+    padding: 16px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #drawer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: translate(0, 0);
+  }
+
+  #drawer li {
+    border-bottom: none;
+  }
+
+  #drawer a {
+    font-size: 1.3rem;
+  }
+
+  .nav__item {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    min-width: 1000px;
+  }
+
+  .headline__content {
+    padding: 32px;
+  }
+
+  .headline__title {
+    font-size: 24px;
+  }
+
+  .headline__description {
+    font-size: 18px;
+  }
+
+  main {
+    max-width: 1200px;
+  }
+
+  .latest {
+    max-width: 1200px;
+  }
+
+  .posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+img {
+  display: block;
+}
