@@ -1,6 +1,7 @@
 import "./components/app-bar";
 import "./components/hero-element";
 import "./components/result-list";
+import "./components/result-item";
 import "./components/footer-element";
 import DATA from "../DATA.json";
 

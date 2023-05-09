@@ -11,11 +11,11 @@ class AppBar extends HTMLElement {
                     <img src="./images/logos/RestoEat 2 260x60.svg" alt="RestoEat">
                 </h1>
                 </div>
-                <button id="hamburger">☰</button>
+                <button id="hamburger" type="button">☰</button>
 
                 <nav id="drawer" class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="http://localhost:9000">Home</a></li>
+                    <li class="nav__item"><a href="/" onclick="location.href">Home</a></li>
                     <li class="nav__item"><a href="#">Favorite</a></li>
                     <li class="nav__item"><a href="https://github.com/arifblogger77">About Us</a></li>
                 </ul>

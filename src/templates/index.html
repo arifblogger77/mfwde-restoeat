@@ -1,67 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/logos/favicon.svg" type="image/x-icon">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestoEat</title>
+  </head>
+  <body>
+    <a href="#maincontent" class="skip-link">Skip to Content</a>
+    <app-bar></app-bar>
+    <hero-element></hero-element>
 
-  <title>RestoEat</title>
-</head>
+    <main id="maincontent">
+      <section class="content">
+        <div class="restaurant">
+          <h1 class="restaurant__label">List Restaurants</h1>
+          <result-list></result-list>
+        </div>
+      </section>
+    </main>
 
-<app-bar></app-bar>
-<hero-element></hero-element>
-<!-- <header class="header">
-    <div class="header__inner">
-      <h1 class="header__title">
-        <img src="./images/logos/RestoEat 2 260x60.svg" alt="RestoEat">
-      </h1>
-    </div>
-    <button id="hamburger">☰</button>
-
-    <nav id="drawer" class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="http://localhost:9000">Home</a></li>
-        <li class="nav__item"><a href="#">Favorite</a></li>
-        <li class="nav__item"><a href="https://github.com/arifblogger77">About Us</a></li>
-      </ul>
-    </nav>
-  </header> -->
-
-<!-- <div class="hero">
-    <div class="hero__inner">
-      <h1 class="hero__title">Restaurant yang Membuatmu Nyaman</h1>
-      <p class="hero__tagline">Makanan dan layanan yang membuatmu ingin datang lagi</p>
-    </div>
-  </div> -->
-
-<main>
-  <section class="content">
-    <div class="restaurant">
-      <h1 class="restaurant__label">List Restaurant</h1>
-      <!-- <div id="restaurant-list" class="restaurant__list"></div> -->
-      <result-list></result-list>
-    </div>
-  </section>
-</main>
-
-<footer-element></footer-element>
-
-<!-- <footer>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Favorite</a></li>
-      <li><a href="#">About Us</a></li>
-    </ul>
-  </footer> -->
-
-<!-- <h1>Restaurant Apps Starter Project</h1>
-  <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-  <p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-  <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_4.jpg" width="450" alt=""> -->
-</body>
-
+    <footer-element></footer-element>
+  </body>
 </html>

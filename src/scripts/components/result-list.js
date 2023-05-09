@@ -6,8 +6,9 @@ class ResultList extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <div id="restaurant-list" class="restaurant__list"></div>
+            <div id="restaurant-list" class="restaurant__list"></div>
         `;
+        
         this._results.restaurants.forEach((restaurant) => {
             const resultItem = document.createElement("result-item");
             resultItem.item = { item: restaurant };

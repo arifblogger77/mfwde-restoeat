@@ -31,6 +31,24 @@ body {
 }
 
 /*
+ * Skip to Content
+ */
+
+.skip-link {
+  position: absolute;
+  top: -41px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/*
  * Header
  *
  */
@@ -174,11 +192,98 @@ body {
 }
 
 /*
+ * main
+ */
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.restaurant {
+  width: 100%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.restaurant__label {
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.restaurant__list {
+  margin: 32px auto auto;
+  padding: 16px;
+  text-align: left;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0px 10px;
+}
+
+.restaurant-item {
+  margin-top: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.restaurant-item:hover {
+  box-shadow: 0 4px 8px 0 $background-yellow;
+  transition: 0.8ms;
+}
+
+.restaurant-item__content {
+  padding: 16px 16px 32px 16px;
+}
+
+.restaurant-item__thumbnail {
+  width: 100%;
+  height: 50vw;
+}
+
+.restaurant-item__title {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 16px;
+  transition: 0.3s opacity;
+}
+
+.restaurant-item__title:hover {
+  opacity: 0.5;
+}
+
+.restaurant-item__title a {
+  text-decoration: none;
+  color: inherit;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.restaurant-item__subtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $logo-gray-secondary;
+}
+
+.restaurant-item__subtitle__info {
+  text-decoration: none;
+  color: $logo-color-secondary;
+}
+
+.restaurant-item__description {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+/*
  * footer
  */
 
 footer {
-  background-color: #2c3e50;
+  background-color: $text-primary;
   padding: 2em;
   width: 100%;
   text-align: center;
@@ -197,7 +302,9 @@ footer li {
 
 footer a {
   text-decoration: none;
-  color: #fff;
+  color: $text-secondary;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* button */
@@ -207,12 +314,12 @@ button {
   min-height: 44px;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 670px) {
   .headline__title {
     font-size: 18px;
   }
 
-  .post-item__content {
+  .restaurant-item__content {
     padding: 16px;
   }
 
@@ -241,8 +348,13 @@ button {
 }
 
 @media screen and (min-width: 1000px) {
-  .posts {
+  .restaurant__list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .restaurant-item__thumbnail {
+    width: 100%;
+    height: 20vw;
   }
 }
 
@@ -271,11 +383,7 @@ button {
     max-width: 1200px;
   }
 
-  .posts {
+  .restaurant__list {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-img {
-  display: block;
 }
