@@ -1,7 +1,6 @@
 import '../components/app-bar';
+import '../components/detail-item';
 import '../components/hero-element';
-import '../components/result-list';
-import '../components/result-item';
 import '../components/footer-element';
 import routes from '../routes/router';
 import UrlParser from '../routes/url-parser';

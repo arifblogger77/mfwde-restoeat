@@ -1,7 +1,6 @@
 class ResultList extends HTMLElement {
   set results(params) {
     this._results = params.results;
-    console.table(this._results);
     this.render();
   }
 
@@ -10,7 +9,7 @@ class ResultList extends HTMLElement {
         <div id="restaurant-list" class="restaurant__list"></div>
     `;
 
-    this._results.restaurants.forEach((restaurant) => {
+    this._results.forEach((restaurant) => {
       const resultItem = document.createElement('result-item');
       resultItem.item = { item: restaurant };
 

@@ -1,3 +1,5 @@
+import '../../components/result-list';
+import '../../components/result-item';
 import RestaurantDicodingSource from '../../data/restaurant-dicoding-source';
 
 const ListRestaurants = {
@@ -14,8 +16,8 @@ const ListRestaurants = {
 
   async afterRender() {
     const restaurants = await RestaurantDicodingSource.listRestaurants();
-    const restaurantLists = document.querySelector('result-list');
-    restaurantLists.results = { results: restaurants };
+    const restaurantListsContainer = document.querySelector('result-list');
+    restaurantListsContainer.results = { results: restaurants };
   },
 };
 
