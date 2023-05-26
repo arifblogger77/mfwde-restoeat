@@ -1,5 +1,4 @@
 import '../components/app-bar';
-import '../components/detail-item';
 import '../components/hero-element';
 import '../components/footer-element';
 import routes from '../routes/router';

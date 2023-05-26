@@ -7,8 +7,8 @@ class FooterElement extends HTMLElement {
     this.innerHTML = `
       <footer>
           <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="#">Favorite</a></li>
+              <li><a href="#/home">Home</a></li>
+              <li><a href="#/favorite">Favorite</a></li>
               <li><a href="https://github.com/arifblogger77">About Us</a></li>
           </ul>
           <div class="footer__inner">
