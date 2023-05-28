@@ -2,34 +2,65 @@ import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantDicodingSource {
   static async listRestaurants() {
-    const response = await fetch(API_ENDPOINT.LIST);
-    const responseJson = await response.json();
-    return responseJson.restaurants;
+    try {
+      const response = await fetch(API_ENDPOINT.LIST);
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+
+      const responseJson = await response.json();
+      return responseJson.restaurants;
+    } catch (error) {
+      return error;
+    }
   }
 
   static async detailRestaurant(id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id));
-    const responseJson = await response.json();
-    console.table(responseJson);
-    return responseJson.restaurant;
+    try {
+      const response = await fetch(API_ENDPOINT.DETAIL(id));
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+
+      const responseJson = await response.json();
+      return responseJson.restaurant;
+    } catch (error) {
+      return error;
+    }
   }
 
   static async searchRestaurants(query) {
-    const response = await fetch(API_ENDPOINT.SEARCH(query));
-    const responseJson = await response.json();
-    return responseJson.restaurants;
+    try {
+      const response = await fetch(API_ENDPOINT.SEARCH(query));
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+
+      const responseJson = await response.json();
+      return responseJson.restaurants;
+    } catch (error) {
+      return error;
+    }
   }
 
   static async addReview(data) {
-    const response = await fetch(API_ENDPOINT.ADD_REVIEW, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    const responseJson = await response.json();
-    return responseJson.customerReviews;
+    try {
+      const response = await fetch(API_ENDPOINT.ADD_REVIEW, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+
+      const responseJson = await response.json();
+      return responseJson.customerReviews;
+    } catch (error) {
+      return error;
+    }
   }
 }
 

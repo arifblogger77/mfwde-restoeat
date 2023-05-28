@@ -41,7 +41,10 @@
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
     "whatwg-fetch": "^3.6.2",
+    "workbox-core": "^6.6.0",
+    "workbox-expiration": "^6.6.0",
     "workbox-precaching": "^6.5.4",
+    "workbox-strategies": "^6.6.0",
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {

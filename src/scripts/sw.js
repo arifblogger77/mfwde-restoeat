@@ -1,7 +1,33 @@
 import { precacheAndRoute } from 'workbox-precaching';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { ExpirationPlugin } from 'workbox-expiration';
+import { registerRoute } from 'workbox-routing';
 
 // Do precaching
 precacheAndRoute(self.__WB_MANIFEST);
+
+registerRoute(
+  /^https:\/\/use.fontawesome.com\/b070c8f1df.js/,
+  new CacheFirst({
+    plugins: [
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  /^https:\/\/restaurant-api.dicoding.dev/,
+  new StaleWhileRevalidate({
+    cacheName: 'dicoding-restaurant-api',
+    plugins: [
+      new ExpirationPlugin({
+        maxAgeSeconds: 24 * 60 * 60,
+      }),
+    ],
+  }),
+);
 
 self.addEventListener('install', () => {
   console.log('Service Worker: Installed');

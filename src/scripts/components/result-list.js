@@ -16,6 +16,14 @@ class ResultList extends HTMLElement {
       document.querySelector('#restaurant-list').appendChild(resultItem);
     });
   }
+
+  renderError(message) {
+    this.innerHTML = `
+      <div class="alert" role="alert">
+          ${message}
+      </div>
+    `;
+  }
 }
 
 customElements.define('result-list', ResultList);

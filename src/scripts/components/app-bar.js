@@ -11,7 +11,7 @@ class AppBar extends HTMLElement {
               <img src="./images/logos/RestoEat 2 260x60.svg" alt="RestoEat">
           </h1>
           </div>
-          <button id="hamburger" type="button">☰</button>
+          <button id="hamburger" type="button" aria-label="Hamburger Menu">☰</button>
 
           <nav id="drawer" class="nav">
           <ul class="nav__list">

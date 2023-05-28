@@ -8,7 +8,9 @@ const ListRestaurants = {
       <section class="content">
         <div class="restaurant">
           <h1 class="restaurant__label">List Restaurants</h1>
-          <result-list></result-list>
+          <result-list>
+            <loading-element></loading-element>
+          </result-list>
         </div>
       </section>
     `;
@@ -17,7 +19,14 @@ const ListRestaurants = {
   async afterRender() {
     const restaurants = await RestaurantDicodingSource.listRestaurants();
     const restaurantListsContainer = document.querySelector('result-list');
-    restaurantListsContainer.results = { results: restaurants };
+    const loader = document.querySelector('loading-element');
+
+    loader.classList.remove('display');
+    if (restaurants.message) {
+      restaurantListsContainer.renderError(restaurants.message);
+    } else {
+      restaurantListsContainer.results = { results: restaurants };
+    }
   },
 };
 
