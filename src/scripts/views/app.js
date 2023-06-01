@@ -4,15 +4,17 @@ import '../components/footer-element';
 import routes from '../routes/router';
 import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/drawer-initiator';
+import SkipLinkInitiator from '../utils/skip-link-initiator';
 
 class App {
   constructor({
-    button, hero, drawer, content,
+    button, hero, drawer, content, skipLink,
   }) {
     this._button = button;
     this._hero = hero;
     this._drawer = drawer;
     this._content = content;
+    this._skipLink = skipLink;
 
     this._initialAppShell();
   }
@@ -26,6 +28,10 @@ class App {
     });
 
     // kita bisa menginisiasikan komponen lain bila ada
+    SkipLinkInitiator.init({
+      button: this._skipLink,
+      content: this._content,
+    });
   }
 
   async renderPage() {

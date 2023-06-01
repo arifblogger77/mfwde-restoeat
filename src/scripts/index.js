@@ -8,6 +8,7 @@ const app = new App({
   hero: document.querySelector('.hero'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('main'),
+  skipLink: document.querySelector('.skip-link'),
 });
 
 window.addEventListener('hashchange', () => {
