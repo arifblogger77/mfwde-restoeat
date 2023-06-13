@@ -11,21 +11,36 @@ class FavoriteRestaurantSearchPresenter {
     });
   }
 
-  _searchRestaurant(latestQuery) {
-    this._latestQuery = latestQuery;
-    this._favoriteRestaurants.searchRestaurant(this._latestQuery);
+  async _searchRestaurant(latestQuery) {
+    this._latestQuery = latestQuery.trim();
+
+    let foundRestaurants;
+    if (this.latestQuery.length > 0) {
+      foundRestaurants = await this._favoriteRestaurants.searchRestaurants(this.latestQuery);
+    } else {
+      foundRestaurants = await this._favoriteRestaurants.getAllRestaurants();
+    }
+
+    this._showFoundRestaurants(foundRestaurants);
   }
 
   _showFoundRestaurants(restaurants) {
-    const html = restaurants.reduce(
-      (carry, restaurant) => carry.concat(`
-        <li class="restaurant">
-          <span class="restaurant__title">${restaurant.title || '-'}</span>
-        </li>
-      `),
-    );
+    if (!restaurants) return;
+
+    let html;
+
+    if (restaurants.length > 0) {
+      html = restaurants.reduce(
+        (carry, restaurant) => carry.concat(`<li class="restaurant"><span class="restaurant__title">${restaurant.title || '-'}</span></li>`),
+        '',
+      );
+    } else {
+      html = '<div class="restaurants__not__found">Restaurant tidak ditemukan</div>';
+    }
 
     document.querySelector('.restaurants').innerHTML = html;
+    document.querySelector('#restaurant-search-container')
+      .dispatchEvent(new Event('restaurants:searched:updated'));
   }
 
   get latestQuery() {
