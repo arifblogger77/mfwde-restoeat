@@ -11,13 +11,13 @@ class LikeButton extends HTMLElement {
   render() {
     if (this._isLiked) {
       this.innerHTML = `
-        <button aria-label="unlike this movie" id="likebutton" class="like">
+        <button aria-label="unlike this restaurant" id="likeButton" class="like">
           <i class="fa fa-heart" aria-hidden="true"></i>
         </button>
       `;
     } else {
       this.innerHTML = `
-        <button aria-label="like this movie" id="likebutton" class="like">
+        <button aria-label="like this restaurant" id="likeButton" class="like">
           <i class="fa fa-heart-o" aria-hidden="true"></i>
         </button>
       `;
