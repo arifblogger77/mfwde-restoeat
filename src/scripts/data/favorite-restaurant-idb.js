@@ -35,7 +35,15 @@ const FavoriteRestaurantIdb = {
   },
 
   async searchRestaurants(query) {
-    // TODO
+    return (await this.getAllRestaurants()).filter((restaurant) => {
+      const loweredCaseRestaurantTitle = (restaurant.title || '-').toLowerCase();
+      const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
+
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+
+      return jammedRestaurantTitle.indexOf(jammedQuery) !== -1;
+    });
   },
 };
 
