@@ -8,7 +8,7 @@ class AppBar extends HTMLElement {
       <header class="header">
           <div class="header__inner">
           <h1 class="header__title">
-              <img src="./images/logos/RestoEat 2 260x60.svg" alt="RestoEat">
+              <img src="./images/logos/RestoEat 2 260x60.svg" alt="RestoEat" width="260" height="60">
           </h1>
           </div>
           <button id="hamburger" type="button" aria-label="Hamburger Menu">☰</button>

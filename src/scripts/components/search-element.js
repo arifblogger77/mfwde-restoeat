@@ -6,7 +6,7 @@ class SearchElement extends HTMLElement {
   render() {
     this.innerHTML = `
       <div class="search">
-        <input id="query" type="text"/>
+        <input id="query" class="search__query" type="text" placeholder="Search..."/>
       <div>
     `;
   }

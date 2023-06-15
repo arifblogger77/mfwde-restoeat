@@ -49,8 +49,8 @@ describe('Searching Restaurants', () => {
     it('should show - when the restaurant returned does not contain a title', (done) => {
       document.querySelector('.restaurant')
         .addEventListener('restaurants:updated', () => {
-          const restaurantTitles = document.querySelectorAll('.restaurant-item__title');
-          expect(restaurantTitles.item(0).textContent).toEqual('-');
+          const restaurantNames = document.querySelectorAll('.restaurant-item__title');
+          expect(restaurantNames.item(0).textContent).toEqual('-');
 
           done();
         });
@@ -81,10 +81,10 @@ describe('Searching Restaurants', () => {
     it('should show the name of the restaurants found by Favorite Restaurants', (done) => {
       document.querySelector('.restaurant')
         .addEventListener('restaurants:updated', () => {
-          const restaurantTitles = document.querySelectorAll('.restaurant-item__title');
-          expect(restaurantTitles.item(0).textContent).toEqual('restaurant abc');
-          expect(restaurantTitles.item(1).textContent).toEqual('ada juga restaurant abcde');
-          expect(restaurantTitles.item(2).textContent).toEqual('ini juga boleh restaurant a');
+          const restaurantNames = document.querySelectorAll('.restaurant-item__title');
+          expect(restaurantNames.item(0).textContent).toEqual('restaurant abc');
+          expect(restaurantNames.item(1).textContent).toEqual('ada juga restaurant abcde');
+          expect(restaurantNames.item(2).textContent).toEqual('ini juga boleh restaurant a');
 
           done();
         });

@@ -9,10 +9,12 @@ import LikeButtonPresenter from '../../utils/like-button-presenter';
 const Detail = {
   async render() {
     return `
-      <detail-item class="restaurant-detail-item">
-        <loading-element></loading-element>
-      </detail-item>
-      <like-button></like-button>
+      <section class="content">
+        <detail-item class="restaurant-detail-item">
+          <loading-element></loading-element>
+        </detail-item>
+        <like-button></like-button>
+      </section>
     `;
   },
 

@@ -8,8 +8,8 @@ class FavoriteRestaurantSearchView {
     return `
       <section class="content">
         <div class="restaurant">
-          <search-element></search-element>
           <h1 class="restaurant__label">List Favorite Restaurants</h1>
+          <search-element></search-element>
           <result-list></result-list>
         </div>
       </section>

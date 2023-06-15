@@ -1,3 +1,5 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import './review-list';
 import CONFIG from '../globals/config';
 
@@ -14,7 +16,7 @@ class DetailItem extends HTMLElement {
   render() {
     if (this._item) {
       this.innerHTML = `
-        <img class="restaurant-detail-item__thumbnail" src="${CONFIG.BASE_MEDIUM_IMAGE_URL + this._item.pictureId}" alt="${this._item.name}" crossorigin="anonymous" />
+        <img class="restaurant-detail-item__thumbnail lazyload" data-src="${CONFIG.BASE_MEDIUM_IMAGE_URL + this._item.pictureId}" alt="${this._item.name}" crossorigin="anonymous" />
         <div class="restaurant-detail-item__content">
           <h2 class="restaurant-detail-item__title">${this._item.name}</h2>
             <h3>Information</h3>

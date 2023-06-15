@@ -13,7 +13,7 @@ class FooterElement extends HTMLElement {
           </ul>
           <div class="footer__inner">
               <h1 class="footer__title">
-                  <img src="./images/logos/RestoEat 260x60.svg" alt="RestoEat">
+                  <img src="./images/logos/RestoEat 260x60.svg" alt="RestoEat" width="260" height="60">
               </h1>
               <p style="color: white">Copyright © 2023 - RestoEat</p>
           </div>

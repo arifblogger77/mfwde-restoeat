@@ -1,3 +1,5 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import truncateString from '../utils/truncate';
 import CONFIG from '../globals/config';
 
@@ -14,8 +16,8 @@ class ResultItem extends HTMLElement {
   render() {
     this.innerHTML = `
       <article class="restaurant-item">
-          <img class="restaurant-item__thumbnail"
-              src="${this._item.pictureId ? CONFIG.BASE_MEDIUM_IMAGE_URL + this._item.pictureId : ''}"
+          <img class="restaurant-item__thumbnail lazyload"
+              data-src="${this._item.pictureId ? CONFIG.BASE_MEDIUM_IMAGE_URL + this._item.pictureId : ''}"
               alt="Foto ${this._item.name}" crossorigin="anonymous" />
           <div class="restaurant-item__content">
               <h1 class="restaurant-item__title"><a href="/#/detail/${this._item.id}">${this._item.name || '-'}</a></h1>
