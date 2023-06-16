@@ -1,7 +1,7 @@
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantDicodingSource {
-  static async listRestaurants() {
+  async listRestaurants() {
     try {
       const response = await fetch(API_ENDPOINT.LIST);
       if (!response.ok) {
@@ -29,7 +29,7 @@ class RestaurantDicodingSource {
     }
   }
 
-  static async searchRestaurants(query) {
+  async searchRestaurants(query) {
     try {
       const response = await fetch(API_ENDPOINT.SEARCH(query));
       if (!response.ok) {

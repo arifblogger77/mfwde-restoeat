@@ -41,19 +41,17 @@ Scenario('searching restaurants', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.waitForElement('.restaurant-item__title a', 30);
-  I.seeElement('.restaurant-item__title a');
-
   const names = [];
 
   for (let i = 1; i <= 3; i += 1) {
+    I.waitForElement('.restaurant-item__title a', 30);
+    I.seeElement('.restaurant-item__title a');
     I.click(locate('.restaurant-item__title a').at(i));
 
     I.waitForElement('.restaurant-detail-item__content', 30);
     I.seeElement('#likeButton');
     I.click('#likeButton');
 
-    // eslint-disable-next-line no-await-in-loop
     names.push(await I.grabTextFrom('.restaurant-detail-item__title'));
     I.amOnPage('/');
   }

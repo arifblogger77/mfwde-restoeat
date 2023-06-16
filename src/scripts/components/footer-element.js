@@ -9,7 +9,7 @@ class FooterElement extends HTMLElement {
           <ul>
               <li><a href="#/home">Home</a></li>
               <li><a href="#/favorite">Favorite</a></li>
-              <li><a href="https://github.com/arifblogger77">About Us</a></li>
+              <li><a href="https://github.com/arifblogger77" target="_blank">About Us</a></li>
           </ul>
           <div class="footer__inner">
               <h1 class="footer__title">

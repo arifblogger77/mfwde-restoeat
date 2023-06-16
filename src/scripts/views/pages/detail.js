@@ -10,9 +10,8 @@ const Detail = {
   async render() {
     return `
       <section class="content">
-        <detail-item class="restaurant-detail-item">
-          <loading-element></loading-element>
-        </detail-item>
+        <loading-element></loading-element>
+        <detail-item class="restaurant-detail-item"></detail-item>
         <like-button></like-button>
       </section>
     `;
@@ -21,7 +20,7 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantContainer = document.querySelector('detail-item');
-    const loader = document.querySelector('loading-element');
+    const loader = document.querySelector('#loading');
 
     let restaurant = await FavoriteRestaurantIdb.getRestaurant(url.id);
     if (!restaurant) {
