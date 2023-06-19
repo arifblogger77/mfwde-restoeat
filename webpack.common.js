@@ -86,6 +86,9 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin(),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
   ],
 };
