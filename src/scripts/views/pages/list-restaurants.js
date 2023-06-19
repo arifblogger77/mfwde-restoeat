@@ -14,16 +14,6 @@ const ListRestaurants = {
     const restaurantSource = new RestaurantDicodingSource();
     new RestaurantShowPresenter({ view, restaurantSource });
     new RestaurantSearchPresenter({ view, restaurantSource });
-    // const restaurants = await RestaurantDicodingSource.listRestaurants();
-    // const restaurantListsContainer = document.querySelector('result-list');
-    // const loader = document.querySelector('loading-element');
-
-    // loader.classList.remove('display');
-    // if (restaurants.message) {
-    //   restaurantListsContainer.renderError(restaurants.message);
-    // } else {
-    //   restaurantListsContainer.results = { results: restaurants };
-    // }
   },
 };
 

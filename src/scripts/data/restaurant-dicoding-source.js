@@ -15,7 +15,7 @@ class RestaurantDicodingSource {
     }
   }
 
-  static async detailRestaurant(id) {
+  async detailRestaurant(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
       if (!response.ok) {

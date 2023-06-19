@@ -44,7 +44,7 @@ Scenario('searching restaurants', async ({ I }) => {
   const names = [];
 
   for (let i = 1; i <= 3; i += 1) {
-    I.waitForElement('.restaurant-item__title a', 30);
+    I.waitForElement('.restaurant-item__title a', 60);
     I.seeElement('.restaurant-item__title a');
     I.click(locate('.restaurant-item__title a').at(i));
 

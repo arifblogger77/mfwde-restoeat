@@ -2,7 +2,7 @@ import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
 import FavoriteRestaurantSearchPresenter from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-search-presenter';
 import FavoriteRestaurantSearchView from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-search-view';
 
-describe('Searching Restaurants', () => {
+describe('Searching Favorite Restaurants', () => {
   let presenter;
   let favoriteRestaurants;
   let view;
