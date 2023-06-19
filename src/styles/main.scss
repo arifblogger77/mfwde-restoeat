@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("./font-awesome/css/font-awesome.min.css");
+
+$text-primary: #000000;
+$text-secondary: #ffffff;
+
+$background-yellow: #f6c90e;
+
+$logo-color-primary: #ffd62d;
+$logo-color-secondary: #d62805;
+
+$logo-gray-primary: #cccccc;
+$logo-gray-secondary: #696969;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+/*
+ * Skip to Content
+ */
+
+.skip-link {
+  position: absolute;
+  top: -41px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/*
+ * Header
+ *
+ */
+
+.header {
+  min-height: 60px;
+  transition: min-height 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.header__inner {
+  width: 260px;
+  margin-right: auto;
+}
+
+.header__title {
+  font-weight: 300;
+  font-size: 4em;
+  margin: 0.25em 0;
+  display: inline-block;
+}
+
+/*
+* Drawer
+*
+*/
+
+#drawer {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+
+  /* menyembunyikan drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+  transform: translate(-250px, 0);
+  transition: transform 0.3s ease-in-out;
+  background: white;
+  top: 0;
+  z-index: 1;
+}
+
+#drawer.open {
+  transform: translate(0, 0);
+}
+
+#drawer li {
+  border-bottom: 1px black solid;
+}
+
+#drawer a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 16px 0;
+}
+
+#hamburger {
+  font-size: 32px;
+  font-weight: bold;
+  min-width: 44px;
+  min-height: 44px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/*
+ * Top level navigation
+ */
+
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.nav__item {
+  box-sizing: border-box;
+  display: block;
+  width: auto;
+  text-align: center;
+  line-height: 24px;
+  padding: 24px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  color: $text-primary;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/*
+ * Jumbotron
+ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.hero__image {
+  width: 100%;
+  height: 300px;
+}
+
+.hero__image img, .hero__image source {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__content {
+  position: absolute;
+  width: 100%;
+}
+
+.hero__inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: $logo-color-secondary;
+  opacity: 0.8;
+  padding: 0.5rem;
+}
+
+.hero__title {
+  color: $text-secondary;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.hero__tagline {
+  color: $text-secondary;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/*
+ * main
+ */
+
+main {
+  width: 100%;
+  min-height: 55vh;
+  margin: 0 auto;
+}
+
+.search__query {
+  padding: 12px;
+  font-size: 1.2rem;
+  margin: 8px;
+  border-radius: 10px;
+  width: 50%;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.restaurant {
+  width: 100%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.restaurant__label {
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.restaurant__list {
+  margin: 32px auto auto;
+  padding: 16px;
+  text-align: left;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0px 10px;
+}
+
+.restaurant-item {
+  margin-top: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.restaurant-item:hover {
+  box-shadow: 0 4px 8px 0 $background-yellow;
+  transition: 0.8ms;
+}
+
+.restaurant-item__content {
+  padding: 16px 16px 32px 16px;
+}
+
+.restaurant-item__thumbnail {
+  width: 100%;
+  height: 50vw;
+}
+
+.restaurant-item__title {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 16px 0px;
+  transition: 0.3s opacity;
+}
+
+.restaurant-item__title:hover {
+  opacity: 0.5;
+}
+
+.restaurant-item__title a {
+  text-decoration: none;
+  color: inherit;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px 0;
+}
+
+.restaurant-item__subtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $logo-gray-secondary;
+}
+
+.restaurant-item__subtitle__info {
+  display: inline-block;
+  text-decoration: none;
+  color: $logo-color-secondary;
+  padding: 12px 8px 12px 8px;
+  border: 1px solid $background-yellow;
+  border-radius: 8px;
+}
+
+.restaurant-item__description {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+// Detail
+.restaurant-detail-item {
+  margin: 50px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant-detail-item .restaurant-detail-item__thumbnail {
+  width: 100%;
+  max-width: 100%;
+}
+
+.restaurant-detail-item .restaurant-detail-item__content {
+  padding: 10px 16px;
+}
+
+.restaurant-detail-item .restaurant-detail-item__content h3 {
+  margin-top: 8px;
+}
+
+.restaurant-detail-item .restaurant-detail-item__content h4 {
+  margin: 8px 0;
+}
+
+.restaurant-detail-item .restaurant-detail-item__content span {
+  display: inline-block;
+  padding: 8px;
+  margin: 8px 8px 4px 0;
+  background-color: $logo-color-secondary;
+  color: $text-secondary;
+  border-radius: 5px;
+}
+
+/**
+ * Review
+ */
+
+.review__list {
+  padding: 16px;
+  border-top: 1px solid $logo-color-primary;
+}
+
+.review-item {
+  margin: 16px 0px;
+  padding: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/**
+ * Like
+ */
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $logo-color-secondary;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: $text-secondary;
+  cursor: pointer;
+}
+
+/*
+ * Alert
+ */
+
+.alert {
+  margin: 16px auto;
+  padding: 8px;
+  width: 80%;
+  background-color: $logo-color-secondary;
+  color: $text-secondary;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/*
+ * Loading
+ */
+
+.loading {
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid $logo-gray-primary;
+  border-top: 6px solid $background-yellow;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear;
+}
+
+.loading.display {
+  visibility: visible;
+}
+
+/*
+ * Skeleton
+ */
+
+ .skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton-text__body {
+  width: 75%;
+  height: 1.2rem;
+}
+
+.skeleton-text__body__full {
+  width: 100%;
+  height: 2rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ * form
+ */
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+form input {
+  display: block;
+  padding: 12px;
+  font-size: 1.2rem;
+  margin: 8px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+form button {
+  background-color: $background-yellow;
+  color: $text-primary;
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+/*
+ * footer
+ */
+
+footer {
+  background-color: $text-primary;
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+footer ul {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 1em;
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: $text-secondary;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 14px 8px;
+}
+
+/* button */
+button {
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media screen and (min-width: 670px) {
+  .headline__title {
+    font-size: 18px;
+  }
+
+  .restaurant-item__content {
+    padding: 16px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #drawer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: translate(0, 0);
+  }
+
+  #drawer li {
+    border-bottom: none;
+  }
+
+  #drawer a {
+    font-size: 1.3rem;
+  }
+
+  .nav__item {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .restaurant__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .restaurant-item__thumbnail {
+    width: 100%;
+    height: 20vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    min-width: 1000px;
+  }
+
+  .hero__image {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .headline__content {
+    padding: 32px;
+  }
+
+  .headline__title {
+    font-size: 24px;
+  }
+
+  .headline__description {
+    font-size: 18px;
+  }
+
+  main {
+    max-width: 1200px;
+  }
+
+  .latest {
+    max-width: 1200px;
+  }
+
+  .restaurant__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
